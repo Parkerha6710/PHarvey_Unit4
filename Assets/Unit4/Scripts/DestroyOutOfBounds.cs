@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
-    [SerializeField] private float minY = 0;
+    private float minY = 0;
     // Update is called once per frame
     void Update()
     {

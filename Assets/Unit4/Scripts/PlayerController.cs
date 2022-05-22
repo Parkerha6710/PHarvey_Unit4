@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float velocity = 0;
-    [SerializeField] private GameObject focalPoint = null;
-    [SerializeField] private GameObject powerupIndicator = null;
-    [SerializeField] private float powerupForce = 0;
-    [SerializeField] private float powerupDuration = 0;
+    private float velocity = 0;
+    private GameObject focalPoint = null;
+    private GameObject powerupIndicator = null;
+    private float powerupForce = 0;
+    private float powerupDuration = 0;
 
     private Rigidbody rb;
     private bool hasPowerup = false;
@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour
             powerupIndicator.SetActive(hasPowerup);
         }
     }
-
-    // Fixed Update is called in fixed intervals (do physics manipulation here!)
     void FixedUpdate()
     {
         float vInput = Input.GetAxis("Vertical");
@@ -41,7 +39,6 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // collect powerup
         if (other.CompareTag("Powerup"))
         {
             Destroy(other.gameObject);

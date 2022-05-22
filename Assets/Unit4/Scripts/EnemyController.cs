@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float velocity = 0;
+    private float velocity = 0;
     
     private Rigidbody rb = null;
     private GameObject player = null;
@@ -15,8 +15,6 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
     }
-
-    // Fixed Update is called in fixed intervals (do physics manipulation here!)
     void FixedUpdate()
     {
         if (rb && player)

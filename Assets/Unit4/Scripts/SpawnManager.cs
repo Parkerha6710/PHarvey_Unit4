@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab = null;
-    [SerializeField] private GameObject powerupPrefab = null;
+    private GameObject enemyPrefab = null;
+    private GameObject powerupPrefab = null;
 
-    [SerializeField] private float maxSpawnRadius = 0;
-    [SerializeField] private float minDistanceFromPlayer = 0;
+    private float maxSpawnRadius = 0;
+    private float minDistanceFromPlayer = 0;
 
-    [SerializeField] private float spawnInterval = 0;
+    private float spawnInterval = 0;
 
     private GameObject player;
     private int wave = 0;
@@ -23,7 +23,6 @@ public class SpawnManager : MonoBehaviour
 
     void Update()
     {
-        //if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
         if (GameObject.FindObjectsOfType<EnemyController>().Length <= 0)
         {
             wave++;
